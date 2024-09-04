@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2024-04-02">
+
+<title>Blogs and Articles - Kenya Milk Export and Imports Analysis with R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../custom.scss">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Blogs and Articles</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html" rel="" target="">
+ <span class="menu-text">About Vickman</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/vmandela99/" rel="" target=""><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Kenya Milk Export and Imports Analysis with R</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Visualization</div>
+                <div class="quarto-category">Statistics</div>
+                <div class="quarto-category">R</div>
+                <div class="quarto-category">Analysis</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">April 2, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p><img src="pics/2024_04_02_08_50_41.496973.png" class="img-fluid"></p>
+<p>Election periods cause tension and affect agricultural production, in 2017 it led to a sharp decrease in Milk supply and caused an import rise of the commodity for a period.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/Harvard's Alexandar Keyssar analyzes voter suppression measures _ Harvard Magazine.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Harvard: Picture of People Casting Votes</figcaption>
+</figure>
+</div>
+<p>However, during the outbreak of covid19 Kenya experienced import restrictions causing a slight decrease.</p>
+<p>Source of Data is <a href="https://www.fao.org/faostat/en/#data/QCL">FAOSTATS</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/Swapster.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Picture: Pinterest</figcaption>
+</figure>
+</div>
+<p>Hear is a simple step-wise analysis of generating the code:-</p>
+<pre><code>library(tidyverse)
+library(here)
+library(ggtext)
+# remotes::install_github("AllanCameron/geomtextpath")
+library(geomtextpath)
+library(camcorder)
+
+
+gg_record(dir = here::here("2024/02"), device = "png", width = 1080 * 2, height = 1350 * 2, units = "px", dpi = 320)
+
+
+
+# source: https://www.fao.org/faostat/en/#data/TCL
+
+
+# width to height
+aspect_ratio &lt;- 1280 / 946
+
+
+
+df &lt;- read_csv("2024/data/kenya_milk_trade_2006-2022.csv") %&gt;% 
+  select(year = Year,
+         Element, Value) %&gt;% 
+  pivot_wider(names_from =  "Element",
+              values_from = "Value") %&gt;% #, names_to = c("Export", "Import")
+  rename(imports = "Import Quantity",
+          exports = "Export Quantity") %&gt;% 
+  mutate(imports = round(imports,0)/10000,
+         exports = round(exports, 0)/10000)
+
+# apply lowess smoothing to the import / export data 
+smooth_bw &lt;- 0.17
+
+apply_smoothing &lt;- function(x, y, bw) {
+  smooth &lt;- lowess(x, y, f = smooth_bw)
+  smooth$y
+}
+
+df$imports_smooth &lt;- apply_smoothing(df$year, df$imports, bw = smooth_bw)
+df$exports_smooth &lt;- apply_smoothing(df$year, df$exports, bw = smooth_bw)
+
+
+base_font_family &lt;- "Abhaya Libre"
+line_color &lt;- "#ABA098"
+font_color &lt;- "#564D46" # "#45403E"
+
+
+
+axis_labels_y &lt;- as.character(seq(1, 15 , 1))
+axis_labels_y[axis_labels_y == "100"] &lt;- "100,000"
+
+geom_textline2 &lt;- function(..., stat = "unique", linecolor = NA, 
+                           color = "#554C49", family = base_font_family, 
+                           fontface = "bold", size = 3) {
+  geom_textline(...,
+                stat = stat, linecolor = linecolor, color = color, alpha = 0.87,
+                family = family, size = size)
+}
+
+
+# png(here(base_path, "03-historical.png"), res = 300, units = "in",
+    # width = 6, height = 6 / aspect_ratio)
+p &lt;- df %&gt;% 
+  ggplot2::ggplot(aes(year)) +
+  geom_hline(yintercept = 100, size = 1, col = "#ABA098") +
+  
+  # Highlighted area
+  geom_ribbon(
+    data = . %&gt;% filter(year &lt;= 2017),
+    aes(x = year, ymin = exports_smooth, ymax = imports_smooth),
+    fill = "#F2DBD8", alpha = 0.9) +
+  geom_ribbon(
+    data = . %&gt;% filter(year &gt;= 2017),
+    aes(x = year, ymin = exports_smooth, ymax = imports_smooth),
+    fill = "#E5D9B9", alpha = 0.9) +
+  
+  # smoothed lines (thick coloured lines + thin grey lines)
+  geom_smooth(aes(y = exports),
+              size = 1.5, se = FALSE, span = 0.25, alpha = 0.8,
+              col = "#A3555B", method = "loess") +
+  geom_smooth(aes(y = imports),
+              size = 1.5, se = FALSE, span = 0.25, alpha = 0.8,
+              col = "#D8A962", method = "loess") +
+  geom_smooth(aes(y = exports),
+              size = 0.2, se = FALSE, span = 0.28, alpha = 0.2,
+              col = "grey40", method = "loess") +
+  geom_smooth(aes(y = imports),
+              size = 0.2, se = FALSE, span = 0.28, alpha = 0.2,
+              col = "grey40", method = "loess") +
+  
+  # Annotations
+  geom_textline2(aes(y = imports, label = "Line of Imports"),
+                 vjust = 0, hjust = 0.3) +
+  geom_textline2(aes(y = exports, label = "Line of Exports"),
+                 vjust = 1, hjust = 0.3) +
+  geom_textline2(aes(y = imports, label = "Imports"),
+                 vjust = 1, hjust = 0.95) +
+  geom_textline2(aes(y = exports, label = "Exports"),
+                 vjust = 0, hjust = 0.85) +
+  
+  # geom_textline2(aes(y = exports, label = "BALANCE AGAINST"),
+  #                vjust = -1.5, hjust = 0.38, size = 3.5, 
+  #                family = "Taviraj Bold Italic", 
+  #                # family = "Old Standard TT", fontface = "bold"
+  # ) +
+  annotate("richtext", x = 2019, y = 5, 
+           label = "Post Election&lt;/span&gt; 
+           &lt;i style='font-family: Taviraj Italic; font-size: 7pt'&gt;in&lt;/i&gt; &lt;br&gt;
+           2017
+           &lt;i style='font-family: Taviraj Italic; font-size: 7pt'&gt;and&lt;/i&gt; &lt;br&gt;
+           COVID19.", 
+           size = 4, family = "Taviraj Bold Italic", 
+           hjust = 0, vjust = 1,  color = "#554C49", label.size = 0, fill = NA) +
+  
+  scale_x_continuous(breaks = seq(2006, 2022, 2)) +
+  scale_y_continuous(position = "right", breaks = seq(1, 15, 1),
+                     labels = axis_labels_y) +
+  coord_cartesian(ylim = c(0, 15), expand = FALSE, clip = "off") +
+  labs(
+    title = "Exports and Imports of Milk in 
+    &lt;span style='font-size: 14pt'&gt;Kenya&lt;/span&gt; from 2006 to 2022.",
+    caption = paste("The Bottom line is divided into Years,
+    the Right hand line into L10,000 each.",
+                    "&lt;br&gt;&lt;span style='font-size:4pt'&gt;Designed for 30DayChartChallenge, 02&lt;sup&gt;t&lt;/sup&gt; April 2024, by Victor Mandela",
+                    "&lt;span style='color:transparent'&gt;",
+                    paste(rep(".", 200), collapse = ""),
+                    "&lt;/span&gt;",
+                    "Nairobi, 047, CBD, Kenya&lt;/span&gt;")) +
+  theme_minimal(base_family = base_font_family, base_size = 9) +
+  theme(
+    plot.background = element_rect(color = NA, fill = "#FEFEFF"),
+    axis.title = element_blank(),
+    axis.text = element_text(face = "bold"),
+    panel.grid.major = element_line(color = line_color, size = 0.3),
+    panel.grid.minor = element_blank(),
+    text = element_text(color = font_color),
+    plot.title = element_markdown(face = "bold", hjust = 0.5),
+    plot.caption = element_markdown(hjust = 0.6, size = 9, lineheight = 0.8,
+                                    family = "Charm", face = "bold",
+                                    margin = margin(t = 8)),
+    plot.margin = margin(t = 16, b = 8, l = 12, r = 12))
+p
+invisible(dev.off())
+
+
+# Add the border around the plot area - fair play to William Playfair
+library(grid)
+
+png(here(base_path, "03-historical-wframe.png"), res = 300, units = "in",
+    width = 6, height = 6 / aspect_ratio)
+p + annotation_custom(
+  rectGrob(gp = gpar(col = "#4B4543", fill = NA, lwd = 3)),
+  xmin = 1699.5, xmax = 1787, ymin = -2, ymax = 202
+) + annotation_custom(
+  rectGrob(gp = gpar(col = "#4B4543", fill = NA, lwd = 0.5)),
+  xmin = 1700, xmax = 1786.5, ymin = 0, ymax = 200
+)
+</code></pre>
+<p>Credit to <strong>Ansgar Wolsing.</strong></p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

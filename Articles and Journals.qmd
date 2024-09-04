@@ -1,0 +1,42 @@
+---
+title: "Publications"
+  # template: trestles
+# listing:
+#   contents: publications
+#   sort: "date desc"
+#   type: default
+#   categories: false
+#   sort-ui: false
+#   filter-ui: false
+# page-layout: full
+# title-block-banner: true
+---
+
+1.  Practices, Board functions and performance of Devolved units in Kenya IJECM.com.uk vol. 10. No 4 [Find the journal here](https://ijecm.co.uk/wp-content/uploads/2020/11/81113.pdf)
+
+    ![](pictures/IJECM logo.PNG)
+
+```{=html}
+<!-- -->
+```
+2.  Influence of Job Redesign on Employee commitment among Survivors of restructuring in state corporation in Kenya IJSSE volume.6. no. 5. 2016 [Find link here](https://sob.kcau.ac.ke/personnel/dr-mokaya-oriku-nicodemus/)
+
+3.  Influence of Board functions on Performance of Kenyan County Governments IJSSE. Volume6. no.4. 2016 [Link Here](https://sob.kcau.ac.ke/personnel/dr-mokaya-oriku-nicodemus/)
+
+    ![](pictures/KCA_logo.PNG)
+
+4.  Governance structures Board functions and Performance of Devolved units in Kenya Volume 10. No. 3. (2020) DBA [Link Here](https://uonjournals.uonbi.ac.ke/ojs/index.php/DBAAMR/article/view/621)
+
+    ![](pictures/BDA.PNG)
+
+5.  Boards Accountability practices, Governance Structures and performance of country Governments in Kenya Uon library Repository 2020 6, Role of Audit Committee in Promoting Accountability in Constituency [Find Link Here](http://erepository.uonbi.ac.ke/bitstream/handle/11295/153839/Mokaya_County%20Public%20Service%20Board%20Functions%2Caccountability%20Practices%2C%20Governance%20structures%20and%20Performance%20of%20County%20Governments%20in%20Kenya.pdf?sequence=1&isAllowed=y)
+
+    ![](pictures/UON logo.PNG)
+
+6.  Development Fund in Nairobi County Uon library Repository 2010 6. 6.
+
+7.  Electronic trading, investment, market efficiency and performance in east africa security exchanges
+
+8.  Accountability Practices, Board Function and Performance of County Governments in Kenya;
+
+9.  Effect of forensic accountants in strengthening internal control of county governments; a study of selected county governments in Kenya; KCA University, Nairobi Kenya.

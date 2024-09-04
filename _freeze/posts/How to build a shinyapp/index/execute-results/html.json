@@ -1,0 +1,14 @@
+{
+  "hash": "c53cf8d20c24a429aac18446cbae9b05",
+  "result": {
+    "markdown": "---\ntitle: \"How to build a ShinyApp\"\n\nauthor: \"Victor Mandela\"\n\ndate: '2021-02-17'\n\nslug: how-to-build-a-shinyapp\n\ncategories: [R, Shiny]\n\ntags:\n\n-   Shiny Apps\n\n-   Dashboards\n\nsubtitle: ''\n\nsummary: ''\n\nauthors: []\n\nlastmod: '2021-02-16T14:59:44+03:00'\n\nfeatured: no\n\nImage: \"Featured.jpg\"\n\ncaption: ''\n\nfocal_point: ''\n\npreview_only: no\n\nprojects: []\n\n---\n\n\n## Building a \"Hello world shinyApp\"\n\nWe begin to demonstrate the building blocks of a shinyApp.\n\nAn App needs a \\*User interface (ui)\\* and a server. The majic about the \\*shiny package\\* is that it can create both of this within R, plus run your app using an additionational shiny function.\n\nFirst,\n\n1.  load the library using the shiny.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(shiny)\n```\n:::\n\n\n2.  Create ui using the html function\n\n\n::: {.cell}\n\n```{.r .cell-code}\nui <- fluidPage()\n```\n:::\n\n\n3.  Define a custom function to create the server\n\n\n::: {.cell}\n\n```{.r .cell-code}\nserver <- function(input,\n\noutput,\n\nsession){\n\n}\n```\n:::\n\n\n4.  finally run your app.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nshinyApp(ui = ui, server = server)\n```\n:::\n\n\n## Example1 of shiny app\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(shiny)\n\nlibrary(widgetframe)\n\nui <- fluidPage(\n\n\"Hello, world!!!!!!\"\n\n)\n\nserver <- function(input,\n\noutput,\n\nsession){\n\n}\n\nshinyApp(ui = ui, server = server)\n```\n:::\n\n\n### Example2: Add a question\n\nWe want to go an extra mile an add a text that asks a question. This is possible but adding \\*textinput\\* function that allows us to enter text. It has three arguments, a unique ID that will be used to refer to this input, a label that is displayed to the user and an optional default value.\n\nOur full out put that is diplayed is contained in the server using the render text function. Inside of that you can use \\*paste\\* to create a longer character string. And if add \\*input\\$name\\* you can access the name added using text input. The text is assigned to an output object that will be used in the ui to display.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(shiny)\n\nlibrary(widgetframe)\n\nui <- fluidPage(\n\ntextInput(\"name\", \"Enter your name:\"),\n\ntextOutput(\"r\")\n\n)\n\nserver <- function(input, output){\n\noutput$r <- renderText({\n\npaste0(\"Do you prefer rain or sunshine,\", input$name, \"?\")\n\n})\n\n}\n\nshinyApp(ui = ui, server = server)\n```\n:::\n\n\nYou did it a text that uses a text input!!\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,30 @@
+---
+title: "Dr. Nicodemus Mokaya"
+comments: false
+image: pic.PNG
+about:
+  template: trestles
+# image: pic.jpg
+# about:
+#   template: jolla
+  links:
+    - icon: envelope
+      text: Email
+      href: mailto:onmokaya@gmail.com
+    - icon: google-scholar
+      text: Google Scholar
+      href: http://erepository.uonbi.ac.ke/handle/11295/153839
+    - icon: linkedin
+      text: LinkedIn
+      href: https:https://www.linkedin.com/in/dr-mokaya-nicodemus-oriku-794613258/
+---
+
+::: {#hero-heading}
+Hi! My name is Dr. Mokaya Oriku Nicodemus, and I am Seasoned Accounts and Finance Lecturer from Kenya 💜.
+
+I am mature with high degree of integrity and moral standards. I have excellent ability to guide, counsel and mentor students. I enjoy studying to keep abreast with the changes taking place in the global village.
+
+I have over 28 years of experience teaching across different universities and colleges on the disciplines of accounting, Research and Finance.
+
+I hold a PhD in Finance and Account from The prestigious University of Nairobi. My goal is to disseminate knowledge to the entire world and make it a better place for all of us.
+:::

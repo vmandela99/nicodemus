@@ -1,0 +1,27 @@
+project:
+  type: website
+
+website:
+  title: "ACCOUNTS AND FINANCE"
+  navbar:
+    right:
+      - about.qmd
+      - Articles and Journals.qmd
+      - Supervisions.qmd
+      - icon: google-scholar
+        href: http://erepository.uonbi.ac.ke/handle/11295/153839
+      - icon: linkedin
+        href: https:https://www.linkedin.com/in/dr-mokaya-nicodemus-oriku-794613258/
+format:
+  html:
+    # theme: minty
+    theme: materia
+    # css: styles.css
+    css: custom.scss
+
+editor: visual
+
+execute:
+  freeze: true
+
+
